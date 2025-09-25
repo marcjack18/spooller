@@ -4,5 +4,5 @@ net/ausiasmarch/controller/UsuarioController.class
 net/ausiasmarch/exception/ResourceNotFoundException.class
 net/ausiasmarch/connection/DatabaseParameters.class
 net/ausiasmarch/connection/AppConextListener.class
-net/ausiasmarch/connection/HikariConfiguration.class
 net/ausiasmarch/dao/UsuarioDao.class
+net/ausiasmarch/connection/HikariPool.class

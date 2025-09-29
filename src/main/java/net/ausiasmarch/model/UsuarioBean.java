@@ -16,6 +16,10 @@ public class UsuarioBean {
         this.username = username;
     }
 
+    public UsuarioBean(String username2, String nombre2, String apellido12, String apellido22) {
+        //TODO Auto-generated constructor stub
+    }
+
     public Long getId() {
         return id;
     }

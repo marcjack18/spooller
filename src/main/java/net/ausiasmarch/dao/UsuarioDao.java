@@ -16,6 +16,11 @@ public class UsuarioDao {
         this.oConnection = oConnection;
     }
 
+    public UsuarioDao() {
+        this.oConnection = null;
+        //TODO Auto-generated constructor stub
+    }
+
     public UsuarioBean get(Long id) throws SQLException, ResourceNotFoundException {
         String strSQL = "SELECT * FROM usuario WHERE id = ?";
         UsuarioBean oUsuarioBean = null;
@@ -37,4 +42,16 @@ public class UsuarioDao {
         return oUsuarioBean;
     }
 
+    public boolean save(UsuarioBean usuario) throws SQLException {
+        String strSQL= "INSERT INTO usuarios (username, nombre, apellido1, apellido2) VALUES (?, ?, ?, ?)";
+
+        try (PreparedStatement ps = oConnection.prepareStatement(strSQL)) {
+            ps.setString(1, usuario.getUsername());
+            ps.setString(2, usuario.getNombre());
+            ps.setString(3, usuario.getApellido1());
+            ps.setString(4, usuario.getApellido2());
+
+            return ps.executeUpdate() > 0;
+        }
+    }
 }
